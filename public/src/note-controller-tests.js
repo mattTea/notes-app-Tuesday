@@ -14,19 +14,19 @@ function testControllerRendersNotesList() {
 
   function NoteListDouble() {};
   NoteListDouble.prototype = {
-    add: function(notetext) {},
+    // add: function(notetext) {},
     returnList: function() { return [note]}
   }
  
+  function element() {
+    this.innerHtml = ""
+  }
  
   var noteList = new NoteListDouble
-  noteList.add(note.text)
+  // noteList.add(note.text)
 
   var noteController = new NoteController(noteList)
-  var newHtml = noteController.renderHtml()
+  var newHtml = noteController.renderHtml(element)
   assert.isTrue(newHtml === "<ul><li>test note</li></ul>")
 };
 testControllerRendersNotesList();
-
-// THIS PRINTS TO THE PAGE WHEN RUN
-// Need to double 'document' and give paramenter ot innerhtml to fake renderHtml and not show on screen!!
