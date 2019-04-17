@@ -1,16 +1,20 @@
 (function (exports) {
 
-  function ListView (notesList) {
-    this.listModel = notesList;
+  function NotesListView (notesList) {
+    this.notesList = notesList;
   };
 
-  ListView.prototype.returnHtml = function () {
+  NotesListView.prototype.returnHtml = function () {
     var html = "<ul>";
-    this.listModel.returnList().forEach(function(note){
+    this.notesList.returnList().forEach(function(note){
       html += "<li>" + note.text.substr(0, 20) + "</li>"
     });
     return html + "</ul>"
   }
 
-  exports.ListView = ListView
+  NotesListView.prototype.returnNotesList = function() {
+    return this.notesList
+  }
+
+  exports.NotesListView = NotesListView
 }) (this);

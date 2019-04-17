@@ -1,5 +1,5 @@
 function testCreateListArrayWithOneNote () {
-  var list = new NoteList();
+  var list = new NotesList();
   list.add('Note 1');
 
   assert.isTrue(list.listArray[0].text === 'Note 1');
@@ -7,7 +7,7 @@ function testCreateListArrayWithOneNote () {
 };
 
 function testCreateListArrayWithTwoNotes () {
-  var list = new NoteList();
+  var list = new NotesList();
   list.add('Buy Eggs');
   list.add('Bacon');
 
@@ -16,7 +16,7 @@ function testCreateListArrayWithTwoNotes () {
 };
 
 function testReturnListContents () {
-  var list = new NoteList();
+  var list = new NotesList();
   list.add('Buy Eggs');
   list.add('Bacon');
   testThis = list.returnList();
@@ -25,7 +25,7 @@ function testReturnListContents () {
 }
 
 function testReturnListContents () {
-  var list = new NoteList();
+  var list = new NotesList();
   list.add('Buy Eggs');
   list.add('Bacon');
   testThis = list.returnList();
