@@ -35,7 +35,16 @@ function testViewModelReturnsHtmlNoNotes () {
   assert.isTrue(listView.returnHtml() === "<ul></ul>");
 }
 
+function testsNotesOnlyShowFirst20Chars() {
+  var noteslist = new NoteList
+  noteslist.add("Concatenate to twenty characters only")
+  var listView = new ListView(noteslist)
+  assert.isTrue(listView.returnHtml() === "<ul><li>Concatenate to twent</li></ul>")
+}
+
+
 testViewModelInstantiation();
 testViewModelReturnsHtmlForANote();
 testViewModelReturnsHtmlForSeveralNotes();
 testViewModelReturnsHtmlNoNotes();
+testsNotesOnlyShowFirst20Chars()
