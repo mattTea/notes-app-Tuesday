@@ -1,10 +1,11 @@
 (function(exports){
-  function NotesList () {
+  function NotesList() {
     this.listArray = [];
   };
 
   NotesList.prototype.add = function(text) {
-    var note = new Note(text);
+    var id = this.listArray.length
+    var note = new Note(text, id);
     this.listArray.push(note);
   };
 
